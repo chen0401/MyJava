@@ -20,7 +20,14 @@ public class ThreadTest {
         executor.shutdown();
         // lambda
         new Thread(() -> {
-            System.out.println("thread : " + Thread.currentThread().getId());
+            while (true) {
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("thread : " + Thread.currentThread().getId());
+            }
         }).start();
         // 实现Callable接口
         Callable<Integer> callable = new Callable<Integer>() {
