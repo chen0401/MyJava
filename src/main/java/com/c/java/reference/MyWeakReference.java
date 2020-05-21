@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
  **/
 public class MyWeakReference {
     public static void main(String[] args) {
-        WeakReference<Person> weakReference = new WeakReference<>(new Person());
+        WeakReference<Object> weakReference = new WeakReference<>(new Object());
         System.out.println(weakReference.get());
         System.gc();
         System.out.println(weakReference.get());
